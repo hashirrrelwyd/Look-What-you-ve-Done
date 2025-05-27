@@ -1,0 +1,40 @@
+/* Base styles for the team section
+.team-section {
+  background-color: white;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.team-image {
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease-in-out;
+}
+
+.team-text-left,
+.team-text-right {
+  position: absolute;
+  font-size: 6rem;
+  font-weight: bold;
+  color: black;
+  z-index: 10;
+}
+
+.team-main-image {
+  width: 300px;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+}
+
+.team-description {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  font-size: 1.2rem;
+  color: gray;
+} */

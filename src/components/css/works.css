@@ -1,0 +1,115 @@
+/* Container to hold all cards */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  /* Card container styles */
+  .card {
+    background-position: center;
+    background-size: cover;
+    box-shadow: rgba(0, 0, 0, 0.24) -20px 30px 10px;
+    border-radius: 10px;
+    transform-style: preserve-3d;
+    transform: perspective(700px) rotateX(55deg) rotateZ(-40deg);
+    transition: transform 1s ease-in-out, margin 0.8s ease-in-out;
+    position: absolute;
+  }
+  
+  /* Stacked vertically */
+  .card:nth-child(1) {
+    top: -120px;
+    z-index: 3;
+  }
+  .card:nth-child(2) {
+    top: -60px;
+    z-index: 2;
+  }
+  .card:nth-child(3) {
+    top: 0px;
+    z-index: 1;
+  }
+  
+  /* Hover effect to transform into horizontal layout */
+  .works:hover .card {
+    transform: rotateY(19deg);
+  }
+  .works:hover .card:nth-child(1) {
+    transform: translateX(-430px) translateY(130px);
+  }
+  .works:hover .card:nth-child(2) {
+    transform: translateX(0px) translateY(70px);
+  }
+  .works:hover .card:nth-child(3) {
+    transform: translateX(430px) translateY(10px);
+  }
+  
+  @media (min-width: 1024px) {
+      .works:hover .card {
+    transform: rotateY(19deg);
+  }
+  .works:hover .card:nth-child(1) {
+    transform: translateX(-430px) translateY(130px);
+  }
+  .works:hover .card:nth-child(2) {
+    transform: translateX(0px) translateY(70px);
+  }
+  .works:hover .card:nth-child(3) {
+    transform: translateX(430px) translateY(10px);
+  }
+  }
+
+  @media (max-width: 1024px) {
+    .works:hover .card {
+      transform: rotateY(19deg);
+    }
+    .works:hover .card:nth-child(1) {
+      transform: translateX(-180px) translateY(130px);
+    }
+    .works:hover .card:nth-child(2) {
+      transform: translateX(230px) translateY(70px);
+    }
+    .works:hover .card:nth-child(3) {
+      transform: translateX(640px) translateY(10px);
+    }
+  }
+  @media (max-width: 600px) {
+    .works:hover .card {
+      transform: rotateY(19deg);
+    }
+    .works:hover .card:nth-child(1) {
+      transform: translateX(-50px) translateY(130px);
+    }
+    .works:hover .card:nth-child(2) {
+      transform: translateX(260px) translateY(70px);
+    }
+    .works:hover .card:nth-child(3) {
+      transform: translateX(570px) translateY(10px);
+    }
+  }
+  /* Create space between the cards when hovered */
+  .container:hover {
+    flex-direction: row;
+    gap: 10px;
+  }
+  
+  /* Add content to the cards */
+  .card-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+  }
+  
+  .card-title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .card-description {
+    font-size: 16px;
+    opacity: 0.8;
+  }
+  

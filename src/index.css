@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+:root {
+  --lwyd-yellow: #ffcc00;
+}
+
+.text-lwyd-yellow {
+  color: var(--lwyd-yellow);
+}
+
+.bg-lwyd-yellow {
+  background-color: var(--lwyd-yellow);
+}
