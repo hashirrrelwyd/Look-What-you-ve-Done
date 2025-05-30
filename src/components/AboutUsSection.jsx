@@ -18,7 +18,7 @@ const clients = [
 export default function AboutUsSection() {
   return (
     <>
-      <div className="w-full px-10 py-10 text-black bg-white">
+      <div className="w-full px-6 md:px-10 py-10 text-black bg-white">
         <div className="flex flex-col gap-4 md:flex-row justify-between py-6">
           <h2 className="text-xs lg:text-lg">
             {" "}

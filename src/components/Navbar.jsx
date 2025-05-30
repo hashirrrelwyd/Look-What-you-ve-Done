@@ -1,9 +1,9 @@
-import React from "react";
+
 
 export default function Navbar() {
   return (
     <>
-      <nav className="absolute top-0 left-0 w-full h-16 flex items-center justify-between px-10 py-14 lg:py-0 text-white">
+      <nav className="absolute z-50 top-0 left-0 w-full h-16 flex items-center justify-between px-6 md:px-10 py-14 lg:py-0 text-white">
         <div>
           <a href="/">
             <img src="/svg/logo.svg" alt="Lwyd logo" className="w-8" />

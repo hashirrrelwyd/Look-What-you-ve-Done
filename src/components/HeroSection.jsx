@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "./Navbar";
 
 const heroContent = [
@@ -31,50 +31,64 @@ const heroContent = [
 
 export default function HeroSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [nextIndex, setNextIndex] = useState((currentIndex + 1) % heroContent.length);
 
-  // Automatically change to the next hero content
+  // Progress bar and auto change logic
   useEffect(() => {
-    const interval = setInterval(() => {
-      setTimeout(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % heroContent.length);
-        setProgress(0); // Reset progress
-      }, 0); // Wait for 2 seconds for the image to fade out
+    setNextIndex((currentIndex + 1) % heroContent.length);
+    if (isAnimating) return; // pause progress during animation
 
-      // Increase the progress bar (simulate loading)
-      const progressInterval = setInterval(() => {
-        setProgress((prevProgress) =>
-          prevProgress < 100 ? prevProgress + 2 : 100
-        );
-      }, 100);
+    const progressInterval = setInterval(() => {
+      setProgress((prev) => (prev < 100 ? prev + 2 : 100));
+    }, 100);
 
-      // Clear progress interval after progress is 100
-      if (progress >= 100) clearInterval(progressInterval);
-    }, 1000); // Change every 5 seconds
+    if (progress >= 100 && !isAnimating) {
+      setIsAnimating(true);
+      setNextIndex((currentIndex + 1) % heroContent.length);
+      setProgress(0);
+    }
 
-    return () => clearInterval(interval); // Clean up interval on unmount
-  }, [progress]);
+    return () => clearInterval(progressInterval);
+  }, [progress, currentIndex, isAnimating]);
+
+  // Called when growing animation completes
+  const onAnimationComplete = () => {
+    setCurrentIndex(nextIndex);
+    setIsAnimating(false);
+  };
 
   const currentHero = heroContent[currentIndex];
-  const nextHero = heroContent[(currentIndex + 1) % heroContent.length];
+  const upcomingHero = heroContent[nextIndex];
 
   return (
-    <div className="relative w-full h-screen text-white">
+    <div className="relative w-full h-screen text-white overflow-hidden">
       <Navbar />
 
-      {/* Hero Content */}
+      {/* Current Hero Background */}
       <div
         style={{
           backgroundImage: `url(${currentHero.image})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
+          width: "100%",
+          height: "100vh",
+          position: "relative",
+          zIndex: 0,
         }}
-        className="w-full h-screen"
       >
-        {/* Content Section */}
-        <div className="absolute bottom-2 flex justify-between w-full px-10 pb-10">
-          <div className="flex flex-col gap-4">
-            <div className="flex gap-4">
+        {/* Content Section with fade on animation */}
+        <motion.div
+          key={`content-${currentIndex}`}
+          initial={{ opacity: 1 }}
+          animate={{ opacity: isAnimating ? 0 : 1 }}
+          transition={{ duration: 0.5 }}
+          className="absolute bottom-2 flex justify-between w-full px-6 md:px-10 pb-10 text-white"
+          style={{ zIndex: 10 }}
+        >
+          <div className="flex flex-col gap-4 max-w-[60%]">
+            <div className="flex gap-4 items-center">
               <h2 className="text-4xl lg:text-6xl">{currentHero.title1}</h2>
               <img
                 src="/svg/Button - Showreel.svg"
@@ -82,40 +96,97 @@ export default function HeroSection() {
                 className="w-10 lg:w-14 cursor-pointer"
               />
             </div>
-            <div className="flex gap-4">
+            <div className="flex gap-4 items-start">
               <h2 className="text-4xl lg:text-6xl">{currentHero.title2}</h2>
               <p className="opacity-60 text-xs lg:text-md pt-1 w-[150px] lg:w-[300px] lg:mt-6 lg:pt-0 line-clamp-2 h-[35px] lg:h-[30px]">
                 {currentHero.description}
               </p>
             </div>
           </div>
+        </motion.div>
+      </div>
 
-          {/* Thumbnail and progress bar */}
-          <div
+      {/* Thumbnail on the side */}
+      <div
+        className="hidden md:block"
+        style={{
+          backgroundImage: `url(${upcomingHero.image})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          width: "200px",
+          height: "100px",
+          borderRadius: "12px",
+          position: "absolute",
+          bottom: "50px",
+          right: "50px",
+          boxShadow: "0 0 20px rgba(0,0,0,0.5)",
+          zIndex: 20,
+          cursor: "pointer",
+          opacity: isAnimating ? 0 : 1,
+          transition: "opacity 0.3s ease",
+        }}
+        onClick={() => {
+          if (!isAnimating) {
+            setIsAnimating(true);
+            setNextIndex((currentIndex + 1) % heroContent.length);
+            setProgress(0);
+          }
+        }}
+      >
+        {/* Progress bar below thumbnail */}
+        <div
+          style={{
+            position: "absolute",
+            bottom: 6,
+            left: 10,
+            width: "180px",
+            height: "4px",
+            backgroundColor: "#fff",
+            borderRadius: "2px",
+            overflow: "hidden",
+          }}
+        >
+          <motion.div
+            animate={{ width: `${progress}%` }}
+            transition={{ duration: 0.1, ease: "linear" }}
             style={{
-              backgroundImage: `url(${nextHero.image})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
+              height: "100%",
+              backgroundColor: "#f1683a",
+              borderRadius: "2px",
             }}
-            className="hidden md:flex relative w-[200px] h-[100px] rounded-md mt-7 shadow-2xl"
-          >
-            <div className="absolute bottom-2">
-              <div className="relative w-[180px] h-1 bg-white rounded-full ml-2.5">
-                <motion.div
-                  style={{
-                    width: `${progress}%`,
-                  }}
-                  className="absolute h-1 bg-lwyd-yellow rounded-full"
-                  transition={{
-                    duration: 0.1,
-                    ease: "linear",
-                  }}
-                ></motion.div>
-              </div>
-            </div>
-          </div>
+          />
         </div>
       </div>
+
+      {/* Animate the growing image */}
+      <AnimatePresence>
+        {isAnimating && (
+          <motion.div
+            key="grow-image"
+            initial={{
+              width: 200,
+              height: 100,
+              borderRadius: 12,
+              position: "absolute",
+              bottom: 50,
+              right: 50,
+              backgroundImage: `url(${upcomingHero.image})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              zIndex: 1000,
+            }}
+            animate={{
+              width: "100vw",
+              height: "100vh",
+              bottom: 0,
+              right: 0,
+              borderRadius: 0,
+            }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            onAnimationComplete={onAnimationComplete}
+          />
+        )}
+      </AnimatePresence>
     </div>
   );
 }

@@ -3,7 +3,7 @@ import "./css/footer.css";
 export default function Footer() {
   return (
     <>
-      <footer className="bg-black text-white rounded-tl-4xl rounded-tr-4xl px-10 pb-10">
+      <footer className="bg-black text-white rounded-tl-4xl rounded-tr-4xl px-6 md:px-10 pb-10">
         <div className="flex flex-col md:flex-row gap-10 pt-14 justify-between pb-4">
           <div className="flex flex-col gap-16">
             {/* <div className="flex">
