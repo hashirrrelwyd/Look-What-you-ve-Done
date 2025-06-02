@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import {useCursor} from "../../context/CursorContext"
 
 const cards = [
   {
@@ -51,6 +52,8 @@ const cards = [
 export default function WorksSection() {
   const [current, setCurrent] = useState(0);
 
+  const {setHoverType} = useCursor()
+
   // Auto slide every 4 seconds
   useEffect(() => {
     const interval = setInterval(() => {
@@ -80,33 +83,37 @@ export default function WorksSection() {
 
   const visibleCards = getVisibleCards();
 
+
+
   return (
     <div className="min-h-screen flex px-6 md:px-10 py-10 bg-[#111111] rounded-b-4xl text-white">
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 w-full">
         {/* Left content - Desktop */}
         <div className="hidden xl:flex flex-col justify-between items-start w-1/3">
-          <h2 className="text-md">
+          <h2 className="text-md" onMouseEnter={() => setHoverType("big-white")} onMouseLeave={() => setHoverType("default")}>
             <span className="text-lwyd-yellow">/</span>Look what we've done
           </h2>
           <div className="flex flex-col gap-4 mt-10">
-            <h2 className="work-title text-3xl">
+            <div className="flex"><h2 className="work-title text-3xl" onMouseEnter={() => setHoverType("big-white")} onMouseLeave={() => setHoverType("default")}>
               {cards[current].title}
               <span className="text-lwyd-yellow">.</span>{" "}
-            </h2>
-            <p className="work-desc text-gray-400 ">
+            </h2></div>
+            <p className="work-desc text-gray-400 " onMouseEnter={() => setHoverType("big-white")} onMouseLeave={() => setHoverType("default")}>
               {cards[current].description}
             </p>
             <div className="flex space-x-4 mt-6">
               <button
+                onMouseEnter={() => setHoverType("button")} onMouseLeave={() => setHoverType("default")}
                 onClick={goPrev}
-                className="p-3 hover:bg-gray-800 rounded-full transition-colors"
+                className="p-3 rounded-full transition-colors cursor-none"
                 aria-label="Previous"
               >
                 <img src="/icons/left-chevron.png" alt="" className="w-6" />
               </button>
               <button
+                onMouseEnter={() => setHoverType("button")} onMouseLeave={() => setHoverType("default")}
                 onClick={goNext}
-                className="p-3 hover:bg-gray-800 rounded-full transition-colors"
+                className="p-3 rounded-full transition-colors cursor-none"
                 aria-label="Next"
               >
                 <img src="/icons/right-chevron.png" alt="" className="w-6" />
@@ -138,7 +145,7 @@ export default function WorksSection() {
               return (
                 <div
                   key={`${card.originalIndex}-${index}`}
-                  className="absolute transition-all duration-700 ease-out cursor-pointer"
+                  className="absolute transition-all duration-700 ease-out"
                   style={{
                     left: `${leftOffset}px`,
                     top: `${topOffset}px`,

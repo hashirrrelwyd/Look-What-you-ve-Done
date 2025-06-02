@@ -1,5 +1,4 @@
-import React from "react";
-
+import { useCursor } from "../../context/CursorContext";
 const clients = [
   "icons/amrut.png",
   "icons/antiquity.png",
@@ -16,15 +15,28 @@ const clients = [
 ];
 
 export default function AboutUsSection() {
+  const { setHoverType } = useCursor();
   return (
     <>
-      <div className="w-full px-6 md:px-10 py-10 text-black bg-white">
+      <div
+        className="w-full px-6 md:px-10 py-10 text-black bg-white"
+        onMouseEnter={() => setHoverType("black")}
+        onMouseLeave={() => setHoverType("default")}
+      >
         <div className="flex flex-col gap-4 md:flex-row justify-between py-6">
-          <h2 className="text-xs lg:text-lg">
+          <h2
+            className="text-xs lg:text-lg"
+            onMouseEnter={() => setHoverType("big-black")}
+            onMouseLeave={() => setHoverType("black")}
+          >
             {" "}
             <span className="text-lwyd-yellow">/</span> about us
           </h2>
-          <p className="text-xs md:text-sm lg:text-xl lg:w-[500px]">
+          <p
+            className="text-xs md:text-sm lg:text-xl lg:w-[500px]"
+            onMouseEnter={() => setHoverType("big-black")}
+            onMouseLeave={() => setHoverType("black")}
+          >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit,{" "}
             <span className="text-lwyd-yellow">sed do Lorem</span> ipsum
           </p>
@@ -40,6 +52,8 @@ export default function AboutUsSection() {
                 className="flex justify-center items-center px-4 sm:w-32 lg:w-44 w-28 h-auto"
               >
                 <img
+                  onMouseEnter={() => setHoverType("big-black")}
+                  onMouseLeave={() => setHoverType("black")}
                   src={client}
                   alt="client logo"
                   className="w-full h-auto object-contain p-2"

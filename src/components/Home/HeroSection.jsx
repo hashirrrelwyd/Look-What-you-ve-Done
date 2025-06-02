@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Navbar from "./Navbar";
+import Navbar from "../Common/Navbar";
 
 const heroContent = [
   {
@@ -93,7 +93,7 @@ export default function HeroSection() {
               <img
                 src="/svg/Button - Showreel.svg"
                 alt="play button"
-                className="w-10 lg:w-14 cursor-pointer"
+                className="w-10 lg:w-14"
               />
             </div>
             <div className="flex gap-4 items-start">
@@ -121,7 +121,6 @@ export default function HeroSection() {
           right: "50px",
           boxShadow: "0 0 20px rgba(0,0,0,0.5)",
           zIndex: 20,
-          cursor: "pointer",
           opacity: isAnimating ? 0 : 1,
           transition: "opacity 0.3s ease",
         }}

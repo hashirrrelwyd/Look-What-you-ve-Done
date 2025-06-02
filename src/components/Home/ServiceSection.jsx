@@ -30,8 +30,15 @@ export default function ServiceSection() {
 
   return (
     <div className="relative h-[300vh]" ref={containerRef}>
-      {/* Sticky full screen text section */} 
-      <div style={{backgroundImage: 'url(images/service-bg.png)', backgroundPosition:"center", backgroundSize:"cover"}} className="sticky top-0 h-screen flex gap-1 flex-col items-center justify-center overflow-hidden bg-transparent">
+      {/* Sticky full screen text section */}
+      <div
+        style={{
+          backgroundImage: "url(images/service-bg.png)",
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+        }}
+        className="sticky top-0 h-screen flex gap-1 flex-col items-center justify-center overflow-hidden bg-transparent"
+      >
         <div className="absolute bg-black z-30"></div>
         {/* Text Section 1 */}
         <div className="relative h-[15px] sm:h-[23px] lg:h-[30px] overflow-hidden text-center w-full">
