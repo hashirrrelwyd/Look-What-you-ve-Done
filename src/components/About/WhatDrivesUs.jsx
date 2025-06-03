@@ -12,7 +12,7 @@ export default function WhatDrivesUs() {
             onMouseEnter={() => setHoverType("big-white")}
             onMouseLeave={() => setHoverType("default")}
           >
-            <span className="text-lwyd-yellow">/</span>What Drives Us
+            <span className="text-lwyd-yellow">/ </span>What Drives Us
           </h2>
         </div>
         <div>

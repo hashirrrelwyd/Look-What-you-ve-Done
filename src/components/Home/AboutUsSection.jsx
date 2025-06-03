@@ -30,7 +30,7 @@ export default function AboutUsSection() {
             onMouseLeave={() => setHoverType("black")}
           >
             {" "}
-            <span className="text-lwyd-yellow">/</span> about us
+            <span className="text-lwyd-yellow">/</span> About Us
           </h2>
           <p
             className="text-xs md:text-sm lg:text-xl lg:w-[500px]"

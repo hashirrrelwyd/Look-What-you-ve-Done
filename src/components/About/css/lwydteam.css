@@ -1,0 +1,19 @@
+/* Add to your global CSS */
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: #4B5563 #D1D5DB; /* thumb track colors */
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  height: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: #D1D5DB;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: #4B5563;
+  border-radius: 10px;
+  border: 2px solid #D1D5DB;
+}

@@ -44,6 +44,16 @@ const CustomCursor = () => {
           backgroundColor: "#111111",
           border: "none",
         };
+      case "next":
+        return {
+          width: 30,
+          height: 30,
+          backgroundColor: "transparent",
+          border: "none",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        };
       default:
         return {
           width: 15,
@@ -59,8 +69,8 @@ const CustomCursor = () => {
       className="cursor"
       initial={{ opacity: 0 }}
       animate={{
-        x: mousePosition.x - 2,
-        y: mousePosition.y - 2,
+        x: mousePosition.x - 6,
+        y: mousePosition.y - 8,
         opacity: 1,
         ...getCursorStyles(),
       }}
@@ -77,7 +87,23 @@ const CustomCursor = () => {
         pointerEvents: "none",
         zIndex: 9999,
       }}
-    />
+    >
+      {hoverType === "next" && (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="50"
+          height="90"
+          fill="none"
+          stroke="#ffcc00"
+          strokeWidth="1"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          viewBox="0 0 24 24"
+        >
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
+      )}
+    </motion.div>
   );
 };
 

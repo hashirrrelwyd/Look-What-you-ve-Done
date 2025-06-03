@@ -91,7 +91,7 @@ export default function WorksSection() {
         {/* Left content - Desktop */}
         <div className="hidden xl:flex flex-col justify-between items-start w-1/3">
           <h2 className="text-md" onMouseEnter={() => setHoverType("big-white")} onMouseLeave={() => setHoverType("default")}>
-            <span className="text-lwyd-yellow">/</span>Look what we've done
+            <span className="text-lwyd-yellow">/ </span>Look what we've done
           </h2>
           <div className="flex flex-col gap-4 mt-10">
             <div className="flex"><h2 className="work-title text-3xl" onMouseEnter={() => setHoverType("big-white")} onMouseLeave={() => setHoverType("default")}>

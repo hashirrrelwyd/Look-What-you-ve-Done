@@ -22,7 +22,7 @@ export default function AboutUsSection() {
             onMouseEnter={() => setHoverType("big-black")}
             onMouseLeave={() => setHoverType("black")}
           >
-            <span className="text-lwyd-yellow">/</span>about
+            <span className="text-lwyd-yellow">/ </span>About Us
           </h2>
         </div>
         <p

@@ -7,7 +7,7 @@ export default function Footer() {
   const {setHoverType} = useCursor()
   return (
     <>
-      <footer className="bg-black text-white rounded-tl-4xl rounded-tr-4xl px-6 md:px-10 pb-10">
+      <footer className="bg-[#111111] text-white rounded-t-4xl px-6 md:px-10 pb-10">
         <div className="flex flex-col md:flex-row gap-10 pt-14 justify-between pb-4">
           <div className="flex flex-col gap-16">
             {/* <div className="flex">
