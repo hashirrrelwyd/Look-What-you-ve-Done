@@ -1,0 +1,49 @@
+.title-roller {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  height: 1.3em;
+}
+
+.title-roller span {
+  display: block;
+  transition: transform 1s ease, opacity 1s ease;
+  will-change: transform, opacity;
+  line-height: 1.3em;
+}
+
+.title-roller .normal {
+  top: 0;
+  left: 0;
+  color: inherit;
+  z-index: 2;
+}
+
+.title-roller .hovered {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  color: #ffcc00;
+  z-index: 1;
+  transform: translateY(0);
+  opacity: 0;
+}
+
+.box:hover .title-roller .normal {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.box:hover .title-roller .hovered {
+  transform: translateY(-100%);
+  opacity: 1;
+}
+
+/* For description color change on box hover */
+.box .description {
+  transition: color 1s ease;
+}
+
+.box:hover .description {
+  color: #7D7D7D7D;
+}

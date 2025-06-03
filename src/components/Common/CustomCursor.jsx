@@ -59,8 +59,8 @@ const CustomCursor = () => {
       className="cursor"
       initial={{ opacity: 0 }}
       animate={{
-        x: mousePosition.x - 16,
-        y: mousePosition.y - 16,
+        x: mousePosition.x - 2,
+        y: mousePosition.y - 2,
         opacity: 1,
         ...getCursorStyles(),
       }}

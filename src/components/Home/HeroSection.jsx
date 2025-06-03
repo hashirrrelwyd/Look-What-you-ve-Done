@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "../Common/Navbar";
+import { useCursor } from "../../context/CursorContext";
 
 const heroContent = [
   {
@@ -34,6 +35,7 @@ export default function HeroSection() {
   const [isAnimating, setIsAnimating] = useState(false);
   const [progress, setProgress] = useState(0);
   const [nextIndex, setNextIndex] = useState((currentIndex + 1) % heroContent.length);
+  const {setHoverType} = useCursor()
 
   // Progress bar and auto change logic
   useEffect(() => {
@@ -89,16 +91,17 @@ export default function HeroSection() {
         >
           <div className="flex flex-col gap-4 max-w-[60%]">
             <div className="flex gap-4 items-center">
-              <h2 className="text-4xl lg:text-6xl">{currentHero.title1}</h2>
+              <h2 onMouseEnter={()=> setHoverType("big-white")} onMouseLeave={()=> setHoverType("default")} className="text-4xl lg:text-6xl">{currentHero.title1}</h2>
               <img
+              onMouseEnter={()=> setHoverType("button")} onMouseLeave={()=> setHoverType("default")}
                 src="/svg/Button - Showreel.svg"
                 alt="play button"
                 className="w-10 lg:w-14"
               />
             </div>
             <div className="flex gap-4 items-start">
-              <h2 className="text-4xl lg:text-6xl">{currentHero.title2}</h2>
-              <p className="opacity-60 text-xs lg:text-md pt-1 w-[150px] lg:w-[300px] lg:mt-6 lg:pt-0 line-clamp-2 h-[35px] lg:h-[30px]">
+              <h2 onMouseEnter={()=> setHoverType("big-white")} onMouseLeave={()=> setHoverType("default")} className="text-4xl lg:text-6xl">{currentHero.title2}</h2>
+              <p onMouseEnter={()=> setHoverType("big-white")} onMouseLeave={()=> setHoverType("default")} className="opacity-60 text-xs lg:text-md pt-1 w-[150px] lg:w-[300px] lg:mt-6 lg:pt-0 line-clamp-2 h-[35px] lg:h-[30px]">
                 {currentHero.description}
               </p>
             </div>
@@ -109,6 +112,7 @@ export default function HeroSection() {
       {/* Thumbnail on the side */}
       <div
         className="hidden md:block"
+        onMouseEnter={()=> setHoverType("button")} onMouseLeave={()=> setHoverType("default")}
         style={{
           backgroundImage: `url(${upcomingHero.image})`,
           backgroundSize: "cover",
