@@ -1,0 +1,9 @@
+.about-section:hover .about-img {
+    transform: scale(1.13);
+    transform-origin: right center; /* Scale from the right when hovered */
+}
+
+.about-img {
+    transition: transform 1s ease-in-out;
+    transform-origin: right center; /* Default scale from the center */
+}
