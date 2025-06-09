@@ -1,4 +1,7 @@
 import { useCursor } from "../../context/CursorContext";
+import { useEffect } from "react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 const services = [
   {
@@ -63,7 +66,7 @@ export default function Services() {
   const { setHoverType } = useCursor();
   return (
     <div
-      className="h-screen bg-white px-6 md:px-10 py-10 text-black"
+      className="whole-section h-screen bg-white px-6 md:px-10 py-10 text-black"
       onMouseEnter={() => setHoverType("black")}
       onMouseLeave={() => setHoverType("default")}
     >
@@ -94,7 +97,7 @@ export default function Services() {
           <>
             <div
               key={index}
-              className="scrollable-content flex justify-between h-full"
+              className="scrollable-content hidden md:flex justify-between h-full"
             >
               <div className="flex flex-col justify-between w-1/2">
                 <div className="flex flex-col gap-4">
@@ -121,7 +124,38 @@ export default function Services() {
                 />
               </div>
             </div>
-            <hr className="text-[#7D7D7D7D] opacity-25 mt-8 pb-8" />
+            <hr className="hidden md:block text-[#7D7D7D7D] opacity-25 mt-8 pb-8" />
+          </>
+        ))}
+        {/* Mobile Version */}
+        {services.map((service, index) => (
+          <>
+            <div
+              key={index}
+              className="md:hidden scrollable-content justify-between h-full"
+            >
+              <div className="flex flex-col w-full gap-4">
+                <h3 className="text-sm md:text-lg lg:text-xl font-semibold">
+                  {service.title}
+                  <span className="text-lwyd-yellow">.</span>
+                </h3>
+                <p className="text-[#7D7D7D] text-xs md:text-sm lg:text-base">
+                  {service.description}
+                </p>
+                <div className="w-full">
+                  <img
+                    className="object-cover h-[350px] w-full rounded-md"
+                    src={service.image}
+                    alt=""
+                  />
+                </div>
+
+                <p className="text-[#7D7D7D] text-xs md:text-sm lg:text-base">
+                  {service.tags}
+                </p>
+              </div>
+            </div>
+            <hr className="md:hidden text-[#7D7D7D7D] opacity-25 mt-8 pb-8" />
           </>
         ))}
       </div>

@@ -16,3 +16,12 @@ body {
 .bg-lwyd-yellow {
   background-color: var(--lwyd-yellow);
 }
+
+/* hide scroll bar when no need */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}

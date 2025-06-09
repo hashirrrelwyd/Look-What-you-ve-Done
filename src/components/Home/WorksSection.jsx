@@ -164,7 +164,7 @@ export default function WorksSection() {
                       alt={card.title}
                       className={`w-[450px] h-[550px] object-cover rounded-2xl transition-all duration-700 ${
                         isActive
-                          ? "shadow-2xl border-4 border-[#ffcc00]"
+                          ? "shadow-2xl"
                           : "shadow-xl hover:opacity-100"
                       }`}
                       draggable={false}
@@ -193,7 +193,7 @@ export default function WorksSection() {
                   <img
                     src={cards[current].image || "/placeholder.svg"}
                     alt={cards[current].title}
-                    className="w-full h-full object-cover rounded-2xl shadow-2xl border-4 border-[#ffcc00]"
+                    className="w-full h-full object-cover rounded-2xl shadow-2xl"
                     draggable={false}
                   />
 

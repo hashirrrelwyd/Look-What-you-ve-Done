@@ -1,6 +1,9 @@
 import Footer from "../components/Common/Footer";
 import HeroSection from "../components/Common/HeroSection";
 import Services from "../components/Service/Services";
+import WhyBrandsChooseUs from "../components/Service/WhyBrandsChooseUs";
+import WorksSection from "../components/Home/WorksSection";
+import ContactUsSection from "../components/Common/ContactUsSection";
 
 export default function Service() {
   return (
@@ -14,6 +17,9 @@ export default function Service() {
         link="/careers"
       />
       <Services />
+      <WhyBrandsChooseUs />
+      <WorksSection />
+      <ContactUsSection />
       <Footer />
     </>
   );

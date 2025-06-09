@@ -51,7 +51,7 @@ export default function Navbar() {
           className="nav-link"
         >
           <a
-            onClick={() => navigate("/career")}
+            onClick={() => navigate("/careers")}
             className="hidden lg:flex gap-4"
           >
             Work with us <img src="/svg/arrow.svg" alt="" className="" />
