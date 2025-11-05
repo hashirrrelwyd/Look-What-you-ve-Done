@@ -13,6 +13,7 @@ const CustomCursor = () => {
           backgroundColor: "#ffcc00",
           border: "none",
           opacity: 0.3,
+          borderRadius: "50%"
         };
       case "image":
         return {
@@ -20,6 +21,7 @@ const CustomCursor = () => {
           height: 50,
           backgroundColor: "rgba(255, 255, 255, 0.5)",
           border: "1px solid #333",
+          borderRadius: "50%"
         };
       case "big-black":
         return {
@@ -28,6 +30,7 @@ const CustomCursor = () => {
           backgroundColor: "#111111",
           border: "none",
           opacity: 0.3,
+          borderRadius: "50%"
         };
       case "big-white":
         return {
@@ -36,6 +39,7 @@ const CustomCursor = () => {
           backgroundColor: "#ffffff",
           border: "none",
           opacity: 0.3,
+          borderRadius: "50%"
         };
       case "black":
         return {
@@ -43,7 +47,15 @@ const CustomCursor = () => {
           height: 15,
           backgroundColor: "#111111",
           border: "none",
+          borderRadius: "50%"
         };
+      case "input":
+        return {
+          width: 1.5,
+          height: 20,
+          backgroundColor: "#111111",
+          border: "none",
+        };  
       case "next":
         return {
           width: 30,
@@ -60,6 +72,7 @@ const CustomCursor = () => {
           height: 15,
           backgroundColor: "#ffffff",
           border: "none",
+          borderRadius: "50%"
         };
     }
   };
@@ -83,7 +96,7 @@ const CustomCursor = () => {
         position: "fixed",
         top: 0,
         left: 0,
-        borderRadius: "50%",
+        
         pointerEvents: "none",
         zIndex: 9999,
       }}

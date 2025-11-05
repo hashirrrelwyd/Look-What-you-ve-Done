@@ -102,7 +102,7 @@ export default function TeamSection() {
       />
 
       {/* Description */}
-      {/* <motion.div
+      <motion.div
         className="team-description absolute bottom-0 w-full text-center text-gray-600 flex flex-col justify-center items-center"
         animate={{
           opacity: descriptionOpacity,
@@ -116,7 +116,7 @@ export default function TeamSection() {
         <a href="/contact" className="flex text-black">
           Contact Us <img src="/svg/arrow.svg" alt="" className="" />
         </a>
-      </motion.div> */}
+      </motion.div>
     </div>
   );
 }
