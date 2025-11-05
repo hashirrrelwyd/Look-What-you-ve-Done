@@ -8,56 +8,56 @@ const services = [
     title: "Creative Development",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    image: "/images/creative.jpg",
+    image: "/images/creative.webp",
     tags: "Creative Development / Design & Development / Delivery & Refinement",
   },
   {
     title: "Media Services",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    image: "/images/media.jpg",
+    image: "/images/media.webp",
     tags: "Strategy & Planning / Content Creation & Production / Distribution & Optimization",
   },
   {
     title: "Experience Design",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    image: "/images/experience.jpg",
+    image: "/images/experience.webp",
     tags: "Research & Empathy / Ideation & Prototyping / Design & Implementation",
   },
   {
     title: "Video Production",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    image: "/images/video.jpg",
+    image: "/images/video.webp",
     tags: "Pre-Production / Production / Distribution & Optimization",
   },
   {
     title: "Digial Strategy",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    image: "/images/digital.jpg",
+    image: "/images/digital.webp",
     tags: "Research & Analysis / Planning & Strategy Development / Implementation & Optimization",
   },
   {
     title: "Social Media Marketing",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    image: "/images/social.jpg",
+    image: "/images/social.webp",
     tags: "Strategy & Planning / Content Creation & Production / Monitoring & Optimization",
   },
   {
     title: "Website Design & Development",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    image: "/images/website.jpg",
+    image: "/images/website.webp",
     tags: "Strategy & Planning / Content Creation & Production / Monitoring & Optimization",
   },
   {
     title: "Print & Production",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    image: "/images/printing.jpg",
+    image: "/images/printing.webp",
     tags: "Strategy & Planning / Content Creation & Production / Monitoring & Optimization",
   },
 ];

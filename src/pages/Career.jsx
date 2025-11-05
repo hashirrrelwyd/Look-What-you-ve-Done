@@ -1,6 +1,9 @@
-import React from "react";
 import HeroSection from "../components/Common/HeroSection";
 import WhoWeAre from "../components/Career/WhoWeAre";
+import WhyBrandsChooseUs from "../components/Service/WhyBrandsChooseUs"
+import OpenRoles from "../components/Career/OpenRoles";
+import FAQs from "../components/Career/FAQs";
+import Footer from "../components/Common/Footer";
 
 export default function Career() {
   return (
@@ -14,6 +17,10 @@ export default function Career() {
         link="/careers"
       />
       <WhoWeAre />
+      <WhyBrandsChooseUs/>
+      <OpenRoles/>
+      <FAQs />
+      <Footer/>
     </>
   );
 }

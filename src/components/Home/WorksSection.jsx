@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {useCursor} from "../../context/CursorContext"
+import { useCursor } from "../../context/CursorContext";
 
 const cards = [
   {
@@ -52,7 +52,7 @@ const cards = [
 export default function WorksSection() {
   const [current, setCurrent] = useState(0);
 
-  const {setHoverType} = useCursor()
+  const { setHoverType } = useCursor();
 
   // Auto slide every 4 seconds
   useEffect(() => {
@@ -83,27 +83,40 @@ export default function WorksSection() {
 
   const visibleCards = getVisibleCards();
 
-
-
   return (
     <div className="min-h-screen flex px-6 md:px-10 py-10 bg-[#111111] rounded-b-4xl text-white">
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 w-full">
         {/* Left content - Desktop */}
         <div className="hidden xl:flex flex-col justify-between items-start w-1/3">
-          <h2 className="text-md" onMouseEnter={() => setHoverType("big-white")} onMouseLeave={() => setHoverType("default")}>
+          <h2
+            className="text-md"
+            onMouseEnter={() => setHoverType("big-white")}
+            onMouseLeave={() => setHoverType("default")}
+          >
             <span className="text-lwyd-yellow">/ </span>Look what we've done
           </h2>
           <div className="flex flex-col gap-4 mt-10">
-            <div className="flex"><h2 className="work-title text-3xl" onMouseEnter={() => setHoverType("big-white")} onMouseLeave={() => setHoverType("default")}>
-              {cards[current].title}
-              <span className="text-lwyd-yellow">.</span>{" "}
-            </h2></div>
-            <p className="work-desc text-gray-400 " onMouseEnter={() => setHoverType("big-white")} onMouseLeave={() => setHoverType("default")}>
+            <div className="flex">
+              <h2
+                className="work-title text-3xl"
+                onMouseEnter={() => setHoverType("big-white")}
+                onMouseLeave={() => setHoverType("default")}
+              >
+                {cards[current].title}
+                <span className="text-lwyd-yellow">.</span>{" "}
+              </h2>
+            </div>
+            <p
+              className="work-desc text-gray-400 "
+              onMouseEnter={() => setHoverType("big-white")}
+              onMouseLeave={() => setHoverType("default")}
+            >
               {cards[current].description}
             </p>
             <div className="flex space-x-4 mt-6">
               <button
-                onMouseEnter={() => setHoverType("button")} onMouseLeave={() => setHoverType("default")}
+                onMouseEnter={() => setHoverType("button")}
+                onMouseLeave={() => setHoverType("default")}
                 onClick={goPrev}
                 className="p-3 rounded-full transition-colors cursor-none"
                 aria-label="Previous"
@@ -111,7 +124,8 @@ export default function WorksSection() {
                 <img src="/icons/left-chevron.png" alt="" className="w-6" />
               </button>
               <button
-                onMouseEnter={() => setHoverType("button")} onMouseLeave={() => setHoverType("default")}
+                onMouseEnter={() => setHoverType("button")}
+                onMouseLeave={() => setHoverType("default")}
                 onClick={goNext}
                 className="p-3 rounded-full transition-colors cursor-none"
                 aria-label="Next"
@@ -163,9 +177,7 @@ export default function WorksSection() {
                       src={card.image || "/placeholder.svg"}
                       alt={card.title}
                       className={`w-[450px] h-[550px] object-cover rounded-2xl transition-all duration-700 ${
-                        isActive
-                          ? "shadow-2xl"
-                          : "shadow-xl hover:opacity-100"
+                        isActive ? "shadow-2xl" : "shadow-xl hover:opacity-100"
                       }`}
                       draggable={false}
                     />

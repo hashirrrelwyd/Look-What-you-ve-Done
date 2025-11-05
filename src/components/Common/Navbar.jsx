@@ -38,7 +38,7 @@ export default function Navbar() {
           <a
             onMouseEnter={() => setHoverType("button")}
             onMouseLeave={() => setHoverType("default")}
-            onClick={() => navigate("/contact")}
+            onClick={() => navigate("/contact-us")}
             className="nav-link"
           >
             Contact Us
