@@ -12,7 +12,7 @@ export default function HeroSection({
   const { setHoverType } = useCursor();
   return (
     <div className="relative w-full h-screen text-white overflow-hidden">
-      <Navbar />
+      {/* <Navbar /> */}
       <div
         style={{
           backgroundImage: `url('/images/${heroImg}')`,

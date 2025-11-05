@@ -66,7 +66,7 @@ export default function HeroSection() {
 
   return (
     <div className="relative w-full h-screen text-white overflow-hidden">
-      <Navbar />
+      {/* <Navbar /> */}
 
       {/* Current Hero Background */}
       <div
