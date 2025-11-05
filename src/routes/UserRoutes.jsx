@@ -6,11 +6,13 @@ import Service from "../pages/Service";
 import Career from "../pages/Career";
 import Error404 from "../pages/Error404";
 import ContactUs from "../pages/ContactUs";
+import Navbar from "../components/Common/Navbar";
 
 export default function UserRoutes() {
   return (
     <>
     <ScrollToTop/>
+    <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About/>} />
