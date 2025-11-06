@@ -36,12 +36,6 @@ export const teamData = [
     image: "/team-imgs/Sijin1.svg",
   },
   {
-    title: "Vishnu",
-    subtitle: "Question...",
-    category: "Lead",
-    image: "/team-imgs/VISHNU 2.png",
-  },
-  {
     title: "Yokeshwar Elangovan",
     subtitle: "Where's the calendar bro?",
     category: "Lead",

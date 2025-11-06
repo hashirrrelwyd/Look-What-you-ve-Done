@@ -137,8 +137,8 @@ export default function LwydTeam() {
     { key: "Designer", label: "Designer" },
     { key: "AM", label: "Account Managers" },
     { key: "Developer", label: "Developer" },
-    { key: "Friyay", label: "Friyay" },
-    { key: "Hr&Finance", label: "HR & Finance" },
+    // { key: "Friyay", label: "Friyay" },
+    // { key: "Hr&Finance", label: "HR & Finance" },
   ];
 
   return (
@@ -331,7 +331,7 @@ export default function LwydTeam() {
                           : ""
                       }`}
                       onClick={() => setCurrentIndex(index)}
-                      onMouseEnter={() => setHoverType("image")}
+                      onMouseEnter={() => setHoverType("big-white")}
                       onMouseLeave={() => setHoverType("default")}
                     >
                       {/* Thumbnail Image Container (Fixed Aspect Ratio) */}
