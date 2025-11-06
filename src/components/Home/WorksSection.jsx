@@ -426,7 +426,7 @@ export default function WorksSection() {
                   <motion.div
                     // Use a unique key based on the original index for stable tracking
                     key={card.originalIndex}
-                    className="absolute cursor-pointer"
+                    className="absolute"
                     layout
                     initial={{
                       // Initial for the *new* card entering the stack
@@ -471,14 +471,13 @@ export default function WorksSection() {
                     }}
                   >
                     <motion.div
-                      whileHover={{ scale: isActive ? 1.03 : 1 }}
                       transition={{ type: "spring", stiffness: 200 }}
-                      className="relative"
+                      className="relative cursor-none"
                     >
                       <img
                         src={card.image || "/placeholder.svg"}
                         alt={card.title}
-                        className={`w-[450px] h-[550px] object-cover rounded-2xl transition-all duration-500 ${
+                        className={`w-[450px] h-[550px] object-cover rounded-2xl transition-all duration-500 cursor-none ${
                           isActive ? "shadow-2xl" : "shadow-lg"
                         }`}
                         draggable={false}

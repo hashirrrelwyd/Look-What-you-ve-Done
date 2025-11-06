@@ -72,7 +72,7 @@
 
 // //         {/* Mobile Hamburger Icon: Toggles the menu ON */}
 // //         <div
-// //           className="lg:hidden cursor-pointer"
+// //           className="lg:hidden"
 // //           onClick={() => setShowMobileNavMenu(true)} // 👈 Open the menu
 // //           onMouseEnter={() => setHoverType("button")}
 // //           onMouseLeave={() => setHoverType("default")}
@@ -424,7 +424,7 @@ export default function Navbar() {
 
           {/* Mobile Hamburger Icon: Toggles the menu ON */}
           <div
-            className="lg:hidden cursor-pointer"
+            className="lg:hidden"
             onClick={() => setShowMobileNavMenu(true)}
             onMouseEnter={() => setHoverType("button")}
             onMouseLeave={() => setHoverType("default")}

@@ -83,9 +83,8 @@ const MobileNavMenu = ({ setShowMobileNavMenu, handleNavigation }) => {
           </a>
         </div>
 
-        {/* Close Icon (9-Dot Grid): Toggles the menu OFF */}
         <div 
-            className="w-6 h-6 grid grid-cols-3 gap-0.5 cursor-pointer"
+            className="w-6 h-6 grid grid-cols-3 gap-0.5"
             onClick={closeMenu} // 👈 Close the menu
         >
           <X className='text-[#f7ea0e]' />
@@ -96,11 +95,11 @@ const MobileNavMenu = ({ setShowMobileNavMenu, handleNavigation }) => {
       <nav className="h-full flex flex-col justify-center">
         <ul className="list-none p-0 m-0 space-y-7 md:space-y-10">
           {/* Update <a> tags to use the new handler */}
-          <li><a onClick={() => navAndClose("/")} className={`text-3xl md:text-4xl font-bold ${yellowText} hover:opacity-80 transition duration-150 cursor-pointer`}>Home</a></li>
-          <li><a onClick={() => navAndClose("/about")} className={`text-3xl md:text-4xl font-bold ${yellowText} hover:opacity-80 transition duration-150 cursor-pointer`}>About Us</a></li>
-          <li><a onClick={() => navAndClose("/services")} className={`text-3xl md:text-4xl font-bold ${yellowText} hover:opacity-80 transition duration-150 cursor-pointer`}>Services</a></li>
-          <li><a onClick={() => navAndClose("/careers")} className={`text-3xl md:text-4xl font-bold ${yellowText} hover:opacity-80 transition duration-150 cursor-pointer`}>Careers</a></li>
-          <li><a onClick={() => navAndClose("/contact-us")} className={`text-3xl md:text-4xl font-bold ${yellowText} hover:opacity-80 transition duration-150 cursor-pointer`}>Contact Us</a></li>
+          <li><a onClick={() => navAndClose("/")} className={`text-3xl md:text-4xl font-bold ${yellowText} hover:opacity-80 transition duration-150`}>Home</a></li>
+          <li><a onClick={() => navAndClose("/about")} className={`text-3xl md:text-4xl font-bold ${yellowText} hover:opacity-80 transition duration-150`}>About Us</a></li>
+          <li><a onClick={() => navAndClose("/services")} className={`text-3xl md:text-4xl font-bold ${yellowText} hover:opacity-80 transition duration-150`}>Services</a></li>
+          <li><a onClick={() => navAndClose("/careers")} className={`text-3xl md:text-4xl font-bold ${yellowText} hover:opacity-80 transition duration-150`}>Careers</a></li>
+          <li><a onClick={() => navAndClose("/contact-us")} className={`text-3xl md:text-4xl font-bold ${yellowText} hover:opacity-80 transition duration-150`}>Contact Us</a></li>
         </ul>
       </nav>
 
