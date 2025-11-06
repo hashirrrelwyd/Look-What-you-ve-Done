@@ -141,7 +141,7 @@ export default function TeamSection() {
     >
       <div className="sticky top-0 flex h-screen w-full items-center justify-center overflow-hidden">
         {/* ============= DESKTOP VERSION ============= */}
-        <div className="hidden lg:flex w-full h-full relative flex items-center justify-center px-6">
+        <div className="hidden lg:flex w-full h-full relative items-center justify-center px-6">
           {teamImages.map((image, index) => {
             const size = getRandomSize(index);
             const pos = getImagePosition(

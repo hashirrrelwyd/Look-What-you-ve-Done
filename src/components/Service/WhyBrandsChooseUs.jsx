@@ -84,7 +84,7 @@ export default function WhyBrandsChooseUs() {
       {/* Title */}
       <div className="flex">
         <h2
-          className="text-md md:pb-8 pb-4"
+          className="text-xs lg:text-lg md:pb-8 pb-4"
           onMouseEnter={() => setHoverType("big-white")}
           onMouseLeave={() => setHoverType("default")}
         >
@@ -114,7 +114,7 @@ export default function WhyBrandsChooseUs() {
           {whyUs.map((item, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-[450px] lg:w-[550px] h-[300px] flex flex-col gap-4 pt-8"
+              className="shrink-0 w-[450px] lg:w-[550px] h-[300px] flex flex-col gap-4 pt-8"
             >
               <p className="text-xs text-[#7D7D7D] pb-12">0{index + 1}</p>
               <h3 className="text-2xl">{item.title}</h3>

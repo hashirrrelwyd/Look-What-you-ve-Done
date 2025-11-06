@@ -16,20 +16,20 @@ export default function OpenRoles() {
 
   return (
     <div className="bg-[#111111] px-6 md:px-10 py-12 text-white rounded-b-4xl relative">
-      <div className="flex justify-between pb-4">
+      <div className="flex flex-col sm:flex-row justify-between pb-4 space-y-4">
         <div
           onMouseEnter={() => setHoverType("big-white")}
           onMouseLeave={() => setHoverType("default")}
         >
-          <p>
+          <p className="text-sm lg:text-lg">
             <span className="text-lwyd-yellow">/</span> Open Roles
           </p>
         </div>
 
-        <div className="flex gap-4 relative">
+        <div className="flex justify-between gap-4 relative">
           {/* Location Dropdown */}
           <div
-            className="relative"
+            className="relative w-1/2 sm:w-46"
             onMouseEnter={() => setHoverType("button")}
             onMouseLeave={() => setHoverType("default")}
           >
@@ -38,10 +38,10 @@ export default function OpenRoles() {
                 setShowLocationDropdown((prev) => !prev);
                 setShowDepartmentDropdown(false);
               }}
-              className="bg-[#FFFFFF1A] px-2 py-1 flex gap-3 items-center rounded-sm"
+              className="bg-[#FFFFFF1A] px-2 py-1 flex gap-3 items-center justify-between rounded-sm"
             >
               <p>{selectedLocation}</p>
-              <GoChevronDown className="text-xl" />
+              <GoChevronDown className={`text-xl transition-transform duration-200 ${showLocationDropdown ? "rotate-180" : ""}`} />
             </div>
 
             {showLocationDropdown && (
@@ -64,7 +64,7 @@ export default function OpenRoles() {
 
           {/* Department Dropdown */}
           <div
-            className="relative"
+            className="relative w-1/2 sm:w-46"
             onMouseEnter={() => setHoverType("button")}
             onMouseLeave={() => setHoverType("default")}
           >
@@ -73,10 +73,10 @@ export default function OpenRoles() {
                 setShowDepartmentDropdown((prev) => !prev);
                 setShowLocationDropdown(false);
               }}
-              className="bg-[#FFFFFF1A] px-2 py-1 flex gap-3 items-center rounded-sm"
+              className="bg-[#FFFFFF1A] px-2 py-1 flex gap-3 items-center justify-between rounded-sm"
             >
               <p>{selectedDepartment}</p>
-              <GoChevronDown className="text-xl" />
+              <GoChevronDown className={`text-xl transition-transform duration-200 ${showDepartmentDropdown ? "rotate-180" : ""}`} />
             </div>
 
             {showDepartmentDropdown && (
@@ -114,7 +114,7 @@ export default function OpenRoles() {
                 onMouseEnter={() => setHoverType("button")}
                 onMouseLeave={() => setHoverType("default")}
                 onClick={() => window.open(`${role.googleForm}`, "_blank")}
-                className="flex justify-between items-center py-3"
+                className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 justify-between sm:items-center py-3"
               >
                 {/* Left content: Role */}
                 <div className="text-[#FFFFFF99]">
@@ -122,7 +122,7 @@ export default function OpenRoles() {
                 </div>
 
                 {/* Right content: Tags and chevron */}
-                <div className="flex items-center gap-2 transition-all duration-1000 ease-in-out group-hover:-translate-x-10">
+                <div className="flex items-center max-sm:justify-end gap-2 transition-all duration-500 ease-in-out group-hover:-translate-x-10">
                   <div className="bg-[#FFFFFF1A] px-2 py-1 rounded-sm text-[#7D7D7D]">
                     {role.department}
                   </div>
@@ -131,7 +131,7 @@ export default function OpenRoles() {
                   </div>
 
                   {/* Chevron icon appears on hover */}
-                  <GoChevronRight className="text-lwyd-yellow opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+                  <GoChevronRight className=" text-lwyd-yellow opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
                 </div>
               </div>
 

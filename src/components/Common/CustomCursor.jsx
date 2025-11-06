@@ -79,7 +79,7 @@ const CustomCursor = () => {
 
   return (
     <motion.div
-      className="cursor"
+      className="cursor hidden lg:block"
       initial={{ opacity: 0 }}
       animate={{
         x: mousePosition.x - 6,

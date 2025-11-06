@@ -91,7 +91,7 @@ export default function HeroSection() {
         >
           <div className="flex flex-col gap-4 max-w-[60%]">
             <div className="flex gap-4 items-center">
-              <h2 onMouseEnter={()=> setHoverType("big-white")} onMouseLeave={()=> setHoverType("default")} className="text-4xl lg:text-6xl">{currentHero.title1}</h2>
+              <h2 onMouseEnter={()=> setHoverType("big-white")} onMouseLeave={()=> setHoverType("default")} className="text-4xl lg:text-6xl font-light">{currentHero.title1}</h2>
               <img
               onMouseEnter={()=> setHoverType("button")} onMouseLeave={()=> setHoverType("default")}
                 src="/svg/Button - Showreel.svg"
@@ -100,7 +100,7 @@ export default function HeroSection() {
               />
             </div>
             <div className="flex gap-4 items-start">
-              <h2 onMouseEnter={()=> setHoverType("big-white")} onMouseLeave={()=> setHoverType("default")} className="text-4xl lg:text-6xl">{currentHero.title2}</h2>
+              <h2 onMouseEnter={()=> setHoverType("big-white")} onMouseLeave={()=> setHoverType("default")} className="text-4xl lg:text-6xl font-light">{currentHero.title2}</h2>
               <p onMouseEnter={()=> setHoverType("big-white")} onMouseLeave={()=> setHoverType("default")} className="opacity-60 text-xs lg:text-md pt-1 w-[150px] lg:w-[300px] lg:mt-6 lg:pt-0 line-clamp-2 h-[35px] lg:h-[30px]">
                 {currentHero.description}
               </p>
