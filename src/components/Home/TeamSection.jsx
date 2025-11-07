@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { useCursor } from "../../context/CursorContext";
 import { ArrowUpRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const firstLiftStart = 0.65;
 const firstLiftEnd = 0.7;
@@ -40,6 +41,7 @@ export default function TeamSection() {
   const [isMobile, setIsMobile] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const navigate = useNavigate()
 
   const checkScreenSize = () => {
     setIsMobile(window.innerWidth < 768);
@@ -311,7 +313,7 @@ export default function TeamSection() {
           </motion.p>
 
           <motion.a
-            href="/contact-us"
+            onClick={() => navigate('/contact-us')}
             className="mt-6 mb-16 inline-flex items-center gap-2 text-lg font-medium text-foreground"
             initial="hidden"
             whileInView="visible"

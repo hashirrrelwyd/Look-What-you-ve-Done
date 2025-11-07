@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { useCursor } from "../../context/CursorContext";
 import Navbar from "./Navbar";
 
@@ -10,6 +11,7 @@ export default function HeroSection({
   link,
 }) {
   const { setHoverType } = useCursor();
+  const navigate = useNavigate()
   return (
     <div className="relative w-full h-screen text-white overflow-hidden">
       {/* <Navbar /> */}
@@ -57,7 +59,7 @@ export default function HeroSection({
                 <a
                   onMouseEnter={() => setHoverType("button")}
                   onMouseLeave={() => setHoverType("default")}
-                  href={link}
+                  onClick={() => navigate(link)}
                   className="cursor-none flex gap-2"
                 >
                   {linkText}{" "}
