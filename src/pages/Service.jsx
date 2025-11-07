@@ -14,7 +14,7 @@ export default function Service() {
         heroText2="Dream"
         heroDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do"
         linkText="Start a Project"
-        link="/careers"
+        link="/contact-us"
       />
       <Services />
       <WhyBrandsChooseUs />

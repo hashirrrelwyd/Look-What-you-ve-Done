@@ -14,7 +14,7 @@ export default function About() {
         heroText2="Vision"
         heroDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do"
         linkText="Start a Project"
-        link="/careers" />
+        link="/contact-us" />
       <AboutUsSection />
       <WhatDrivesUs />
       <LwydTeam />

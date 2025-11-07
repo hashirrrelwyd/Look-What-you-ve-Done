@@ -10,8 +10,8 @@ export default function ContactUs() {
         heroText1="Get in"
         heroText2="Touch"
         heroDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do"
-        linkText="Contact Us"
-        link="/contact-us"
+        linkText=""
+        link=""
       />
       <ContactForm />
       <Footer />

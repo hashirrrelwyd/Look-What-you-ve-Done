@@ -52,17 +52,19 @@ export default function HeroSection({
               {heroDescription}
             </p>
 
-            <div className="gap-4 flex text-xs lg:text-sm">
-              <a
-                onMouseEnter={() => setHoverType("button")}
-                onMouseLeave={() => setHoverType("default")}
-                href={link}
-                className="cursor-none flex gap-2"
-              >
-                {linkText}{" "}
-                <img src="/svg/arrow.svg" alt="" className="w-2 lg:w-3" />
-              </a>
-            </div>
+            {linkText && link && (
+              <div className="gap-4 flex text-xs lg:text-sm">
+                <a
+                  onMouseEnter={() => setHoverType("button")}
+                  onMouseLeave={() => setHoverType("default")}
+                  href={link}
+                  className="cursor-none flex gap-2"
+                >
+                  {linkText}{" "}
+                  <img src="/svg/arrow.svg" alt="" className="w-2 lg:w-3" />
+                </a>
+              </div>
+            )}
           </div>
         </div>
       </div>
