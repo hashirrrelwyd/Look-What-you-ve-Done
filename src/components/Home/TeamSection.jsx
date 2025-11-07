@@ -263,7 +263,7 @@ export default function TeamSection() {
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
             <a
-              href="/contact-us"
+              onClick={() => navigate('/contact-us')}
               className="group flex items-center gap-2 text-lg font-medium text-foreground transition-colors hover:text-primary cursor-none"
               onMouseEnter={() => setHoverType("button")}
               onMouseLeave={() => setHoverType("black")}
@@ -364,7 +364,7 @@ export default function TeamSection() {
           </motion.p>
 
           <motion.a
-            href="/contact-us"
+            onClick={() => navigate('/contact-us')}
             className="mt-4 mb-12 inline-flex items-center gap-2 text-base font-medium text-foreground"
             initial="hidden"
             whileInView="visible"
