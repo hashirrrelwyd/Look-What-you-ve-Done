@@ -57,12 +57,12 @@ const MobileNavMenu = ({ setShowMobileNavMenu, handleNavigation }) => {
     // transform translate-x-0 (Visible State)
     <div 
       className={`
-        fixed inset-0 z-100
+        fixed inset-0 z-9999
         ${blackBg} 
         flex flex-col 
         p-6 sm:p-8 md:p-10 py-10
         lg:hidden 
-        min-h-screen
+        h-100dvh
         transition-transform duration-300 ease-in-out // 👈 Transition settings
         ${isAnimating ? 'translate-x-0' : 'translate-x-full'} // 👈 Conditional slide
       `}
