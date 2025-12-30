@@ -1,8 +1,24 @@
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useCursor } from "../../context/CursorContext";
+import { useEffect } from "react";
 
 const CustomCursor = () => {
   const { mousePosition, hoverType } = useCursor();
+
+  // Use motion values for smoother animation without re-renders
+  const cursorX = useMotionValue(0);
+  const cursorY = useMotionValue(0);
+
+  // Apply spring physics to motion values
+  const springConfig = { stiffness: 500, damping: 28, mass: 0.5 };
+  const cursorXSpring = useSpring(cursorX, springConfig);
+  const cursorYSpring = useSpring(cursorY, springConfig);
+
+  // Update motion values when mouse position changes
+  useEffect(() => {
+    cursorX.set(mousePosition.x - 6);
+    cursorY.set(mousePosition.y - 8);
+  }, [mousePosition, cursorX, cursorY]);
 
   const getCursorStyles = () => {
     switch (hoverType) {
@@ -82,21 +98,20 @@ const CustomCursor = () => {
       className="cursor hidden lg:block"
       initial={{ opacity: 0 }}
       animate={{
-        x: mousePosition.x - 6,
-        y: mousePosition.y - 8,
         opacity: 1,
         ...getCursorStyles(),
       }}
       transition={{
         type: "spring",
-        stiffness: 200,
-        damping: 30,
+        stiffness: 300,
+        damping: 25,
       }}
       style={{
         position: "fixed",
         top: 0,
         left: 0,
-        
+        x: cursorXSpring,
+        y: cursorYSpring,
         pointerEvents: "none",
         zIndex: 9999,
       }}
